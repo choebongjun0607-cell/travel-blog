@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>도쿄 여행 노트</title>
+  <meta name="description" content="직접 조사하고 계획한 도쿄 여행 이야기">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <button type="button" id="open-request" class="request-btn">다른 나라 신청하기</button>
+      <a class="title" href="index.html">도쿄 여행 노트</a>
+      <p class="desc">직접 조사하고 계획한 도쿄 여행 이야기</p>
+      <nav>
+        <a href="index.html">글 목록</a>
+        <a href="about.html">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <ul class="post-list">
+      <!-- 새 글은 이 아래에 li 하나를 복사해서 맨 위에 추가 -->
+      <li class="post-card">
+        <div class="meta"><span class="tag">일정 짜기</span> 2026-11-05</div>
+        <h2><a href="posts/tokyo-december-dates.html">도쿄 12월 여행, 날짜는 이렇게 골랐어요</a></h2>
+        <p>연말 휴무와 휴원일을 피해 날짜를 고르는 방법</p>
+      </li>
+    </ul>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">© 2026 도쿄 여행 노트</div>
+  </footer>
+
+  <div id="request-modal" class="modal" hidden role="dialog" aria-modal="true" aria-label="다른 나라 신청하기">
+    <div class="modal-box">
+      <button type="button" class="modal-close" aria-label="닫기">×</button>
+      <form class="modal-body" novalidate>
+        <h2>다른 지역 신청하기</h2>
+        <p class="lead">다음으로 다뤘으면 하는 도시나 소도시가 있다면 알려주세요. 로그인 없이 바로 신청할 수 있어요.</p>
+
+        <label for="rq-nickname">닉네임</label>
+        <input id="rq-nickname" name="nickname" type="text" placeholder="닉네임을 입력해주세요" maxlength="30" required>
+
+        <label for="rq-email">이메일</label>
+        <input id="rq-email" name="email" type="email" placeholder="답변받을 이메일" maxlength="100" required>
+
+        <label for="rq-region">지역 이름</label>
+        <input id="rq-region" name="region" type="text" placeholder="예: 경주, 동영" maxlength="50" required>
+
+        <label for="rq-content">내용</label>
+        <textarea id="rq-content" name="content" rows="4" placeholder="어떤 정보를 다뤘으면 하는지 알려주세요" maxlength="1000"></textarea>
+
+        <p class="form-msg" role="status"></p>
+        <button type="submit" class="submit">신청하기</button>
+      </form>
+    </div>
+  </div>
+  <script src="request.js"></script>
+</body>
+</html>

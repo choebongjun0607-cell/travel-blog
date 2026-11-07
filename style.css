@@ -1,0 +1,136 @@
+:root {
+  --bg: #fbfaf7;
+  --text: #222;
+  --muted: #777;
+  --accent: #c8452d;
+  --line: #e7e3da;
+  --card: #fff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+/* 상단 */
+header.site {
+  border-bottom: 1px solid var(--line);
+  padding: 28px 0 20px;
+}
+header.site .title { font-size: 26px; font-weight: 800; color: var(--text); }
+header.site .title:hover { text-decoration: none; }
+header.site .desc { color: var(--muted); font-size: 15px; margin: 4px 0 0; }
+header.site nav { margin-top: 12px; font-size: 15px; }
+header.site nav a { margin-right: 16px; color: var(--text); }
+
+/* 글 목록 */
+.post-list { list-style: none; padding: 0; margin: 32px 0; }
+.post-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin-bottom: 16px;
+}
+.post-card h2 { margin: 0 0 6px; font-size: 20px; }
+.post-card h2 a { color: var(--text); }
+.post-card p { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
+.meta { font-size: 13px; color: var(--muted); }
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  background: #f1ece1;
+  border-radius: 99px;
+  padding: 1px 10px;
+  margin-right: 6px;
+}
+.tag.draft { background: #fde8e3; color: var(--accent); }
+
+/* 글 본문 */
+article { margin: 40px 0 60px; }
+article h1 { font-size: 30px; line-height: 1.4; margin: 8px 0 12px; }
+article h2 { font-size: 22px; margin: 44px 0 12px; padding-top: 8px; }
+article h3 { font-size: 18px; margin: 28px 0 8px; }
+article ul { padding-left: 22px; }
+article li { margin: 4px 0; }
+article table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; }
+article th, article td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; }
+article th { background: #f6f2e8; }
+article blockquote {
+  margin: 20px 0; padding: 10px 18px;
+  border-left: 4px solid var(--accent);
+  background: #f6f2e8; color: #444;
+}
+
+footer.site {
+  border-top: 1px solid var(--line);
+  padding: 24px 0 40px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* 다른 나라 신청하기 버튼 + 팝업 */
+header.site .wrap { position: relative; }
+.request-btn {
+  position: absolute; top: 0; right: 20px;
+  background: var(--accent); color: #fff;
+  border: 0; border-radius: 99px;
+  padding: 6px 14px; font: inherit; font-size: 14px; cursor: pointer;
+}
+.request-btn:hover { opacity: .9; }
+
+.modal {
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(0, 0, 0, .5);
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px;
+}
+.modal[hidden] { display: none; }
+.modal-box {
+  position: relative; background: #fff; border-radius: 16px;
+  width: 100%; max-width: 440px; max-height: 92vh;
+  overflow-y: auto;
+}
+.modal-body { padding: 32px 28px 28px; }
+.modal-body h2 { margin: 0 0 8px; font-size: 20px; }
+.modal-body .lead { margin: 0 0 20px; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.modal-body label { display: block; margin: 14px 0 6px; font-size: 13px; font-weight: 700; }
+.modal-body input, .modal-body textarea {
+  width: 100%; padding: 11px 14px; font: inherit; font-size: 15px;
+  background: #f4f4f2; border: 1px solid transparent; border-radius: 10px;
+}
+.modal-body textarea { resize: vertical; min-height: 96px; }
+.modal-body input:focus, .modal-body textarea:focus {
+  outline: none; border-color: #2f7d5b; background: #fff;
+}
+.modal-body .submit {
+  width: 100%; margin-top: 18px; padding: 13px;
+  background: #2f7d5b; color: #fff; border: 0; border-radius: 10px;
+  font: inherit; font-size: 16px; font-weight: 700; cursor: pointer;
+}
+.modal-body .submit:disabled { opacity: .6; cursor: default; }
+.form-msg { margin: 12px 0 0; font-size: 14px; min-height: 1em; }
+.form-msg.ok { color: #2f7d5b; }
+.form-msg.err { color: var(--accent); }
+.modal-close {
+  position: absolute; top: 8px; right: 12px; z-index: 1;
+  background: #fff; border: 0; border-radius: 50%;
+  width: 32px; height: 32px; font-size: 22px; line-height: 1; cursor: pointer;
+}
+body.modal-open { overflow: hidden; }
+
+@media (max-width: 480px) {
+  body { font-size: 16px; }
+  article h1 { font-size: 25px; }
+}
