@@ -2,7 +2,9 @@
   --bg: #fbfaf7;
   --text: #222;
   --muted: #777;
-  --accent: #c8452d;
+  --accent: #0abab5;        /* 티파니 민트 (테두리·장식용) */
+  --accent-strong: #078a85; /* 진한 민트 (글자·버튼용, 가독성 확보) */
+  --accent-soft: #e3f6f4;   /* 연한 민트 (배경용) */
   --line: #e7e3da;
   --card: #fff;
 }
@@ -18,7 +20,7 @@ body {
   font-size: 17px;
 }
 
-a { color: var(--accent); text-decoration: none; }
+a { color: var(--accent-strong); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
@@ -55,7 +57,7 @@ header.site nav a { margin-right: 16px; color: var(--text); }
   padding: 1px 10px;
   margin-right: 6px;
 }
-.tag.draft { background: #fde8e3; color: var(--accent); }
+.tag.draft { background: var(--accent-soft); color: var(--accent-strong); }
 
 /* 글 본문 */
 article { margin: 40px 0 60px; }
@@ -84,7 +86,7 @@ footer.site {
 header.site .wrap { position: relative; }
 .request-btn {
   position: absolute; top: 0; right: 20px;
-  background: var(--accent); color: #fff;
+  background: var(--accent-strong); color: #fff;
   border: 0; border-radius: 99px;
   padding: 6px 14px; font: inherit; font-size: 14px; cursor: pointer;
 }
@@ -112,17 +114,17 @@ header.site .wrap { position: relative; }
 }
 .modal-body textarea { resize: vertical; min-height: 96px; }
 .modal-body input:focus, .modal-body textarea:focus {
-  outline: none; border-color: #2f7d5b; background: #fff;
+  outline: none; border-color: var(--accent); background: #fff;
 }
 .modal-body .submit {
   width: 100%; margin-top: 18px; padding: 13px;
-  background: #2f7d5b; color: #fff; border: 0; border-radius: 10px;
+  background: var(--accent-strong); color: #fff; border: 0; border-radius: 10px;
   font: inherit; font-size: 16px; font-weight: 700; cursor: pointer;
 }
 .modal-body .submit:disabled { opacity: .6; cursor: default; }
 .form-msg { margin: 12px 0 0; font-size: 14px; min-height: 1em; }
-.form-msg.ok { color: #2f7d5b; }
-.form-msg.err { color: var(--accent); }
+.form-msg.ok { color: var(--accent-strong); }
+.form-msg.err { color: #c8452d; }
 .modal-close {
   position: absolute; top: 8px; right: 12px; z-index: 1;
   background: #fff; border: 0; border-radius: 50%;
